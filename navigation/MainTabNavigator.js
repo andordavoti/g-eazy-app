@@ -2,12 +2,12 @@ import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import TabBarIcon from '../components/TabBarMaterialIcons';
+import TabBarMaterialIcons from '../components/TabBarMaterialIcons';
 import TabBarMaterialCommunityIcon from '../components/TabBarMaterialCommunityIcons';
 import AlbumsScreen from '../screens/AlbumsScreen';
 import EPsScreen from '../screens/EPsScreen';
 import MixtapesScreen from '../screens/MixtapesScreen';
-import AboutScreen from '../screens/AboutScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -25,7 +25,7 @@ AlbumStack.navigationOptions = {
   tabBarLabel: 'Albums',
   tabBarOptions: { activeTintColor: 'black' },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name='album' />),
+    <TabBarMaterialIcons focused={focused} name='album' />),
 };
 
 AlbumStack.path = '';
@@ -41,7 +41,7 @@ EPsStack.navigationOptions = {
   tabBarLabel: 'EPs',
   tabBarOptions: { activeTintColor: 'black' },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name='library-music' />),
+    <TabBarMaterialIcons focused={focused} name='library-music' />),
 };
 
 EPsStack.path = '';
@@ -67,27 +67,29 @@ MixtapesStack.path = '';
 
 
 
-const AboutStack = createStackNavigator(
+const SettingsStack = createStackNavigator(
   {
-    About: AboutScreen,
+    Settings: SettingsScreen,
   },
   config
 );
 
-AboutStack.navigationOptions = {
-  tabBarLabel: 'About',
+SettingsStack.navigationOptions = {
+  tabBarLabel: 'Settings',
   tabBarOptions: { activeTintColor: 'black' },
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name='info-outline' />),
+    <TabBarMaterialIcons focused={focused} name='settings' />),
 };
 
-AboutStack.path = '';
+SettingsStack.path = '';
+
+
 
 const tabNavigator = createBottomTabNavigator({
   AlbumStack,
   EPsStack,
   MixtapesStack,
-  AboutStack,
+  SettingsStack,
 });
 
 tabNavigator.path = '';

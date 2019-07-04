@@ -5,13 +5,14 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 const CollectionDetail = ({ record }) => {
-    const { title, artist, thumbnail_image, image, url, release_date } = record;
+    const { title, artist, artist_image, image, url, release_date } = record;
     const {
-        thumbnailStyle,
+        artistImageStyle,
         headerContentStyle,
         thumbnailContainerStyle,
-        headerTextStyle,
-        imageStyle
+        recordTitleStyle,
+        imageStyle,
+        artistNameStyle
     } = styles;
 
     return (
@@ -21,16 +22,18 @@ const CollectionDetail = ({ record }) => {
                     <TouchableOpacity
                         onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>
                         <Image
-
-                            source={thumbnail_image}
-                            style={thumbnailStyle}
+                            source={artist_image}
+                            style={artistImageStyle}
                         />
                     </TouchableOpacity>
                 </View>
+
                 <View style={headerContentStyle}>
-                    <Text style={headerTextStyle}> {title} - {release_date}</Text>
+                    <Text style={recordTitleStyle}> {title} - ({release_date})</Text>
                     <TouchableOpacity>
-                        <Text onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>{artist}</Text>
+                        <Text
+                        style={artistNameStyle}
+                        onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>{artist}</Text>
                     </TouchableOpacity>
                 </View>
             </CardSection>
@@ -59,24 +62,30 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'space-around'
     },
-    headerTextStyle: {
+    recordTitleStyle: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
-    thumbnailStyle: {
+    artistNameStyle: {
+        fontSize: 15,
+        marginLeft: 5
+    },
+    artistImageStyle: {
         height: 50,
-        width: 50
+        width: 50,
+        borderRadius: 10
     },
     thumbnailContainerStyle: {
         justifyConten: 'center',
         alignItems: 'center',
-        marginLeft: 10,
-        marginRight: 10
+        marginLeft: 1,
+        marginRight: 1
     },
     imageStyle: {
         height: 400,
         flexGrow: 1,
-        width: null
+        width: null,
+        borderRadius: 5
     }
 };
 

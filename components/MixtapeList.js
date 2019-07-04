@@ -10,48 +10,54 @@ class MixtapeList extends Component {
                 artist: 'G-Eazy',
                 release_date: '2011',
                 url: 'https://soundcloud.com/g_eazy/sets/the-endless-summer-1',
+                service: 'soundcloud',
                 image: require('../assets/images/the-endless-summer.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             },
             {
                 title: 'The Outsider',
                 artist: 'G-Eazy',
                 release_date: '2011',
                 url: 'https://soundcloud.com/g_eazy/sets/the-outsider-1',
+                service: 'soundcloud',
                 image: require('../assets/images/the-outsider.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             },
             {
                 title: 'Big',
                 artist: 'G-Eazy',
                 release_date: '2010',
                 url: 'https://genius.com/albums/G-eazy/Big',
+                service: 'genius',
                 image: require('../assets/images/big.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             },
             {
                 title: 'Quarantine',
                 artist: 'G-Eazy',
                 release_date: '2009',
                 url: 'https://www.youtube.com/playlist?list=PL9b4kuq2Yu29xWYOeB4rxWQi9hB_H2Oei',
+                service: 'youtube',
                 image: require('../assets/images/quarantine.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             },
             {
                 title: 'The Sikkis On The Planet',
                 artist: 'G-Eazy',
                 release_date: '2009',
                 url: 'https://www.youtube.com/playlist?list=PLOBuYCNE1IuEDcILI9HCzhfpeeugQh9lQ',
+                service: 'youtube',
                 image: require('../assets/images/the-sikkis-on-the-planet.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             },
             {
                 title: 'The Tipping Point',
                 artist: 'G-Eazy',
                 release_date: '2008',
                 url: 'https://www.youtube.com/playlist?list=PLOBuYCNE1IuElq-cxZUiFCdqR4iC5aeXt',
+                service: 'youtube',
                 image: require('../assets/images/the-tipping-point.jpg'),
-                thumbnail_image: require('../assets/images/g-eazy.jpg')
+                artist_image: require('../assets/images/g-eazy.jpg')
             }
         ]
     };

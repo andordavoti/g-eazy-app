@@ -32,14 +32,11 @@ export default function AboutScreen() {
             style={Styles.LinkStyle}>
             www.andordavoti.com</Text>
         </TouchableOpacity>
+
+        <Text>Version: 1.0</Text>
       </View>
   );
 }
-
-AboutScreen.navigationOptions = {
-  title: 'About',
-  headerTitleStyle: { flex: 1, textAlign: 'center' },
-};
 
 const Styles = {
   ContainerStyle: {
