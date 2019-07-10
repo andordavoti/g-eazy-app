@@ -86,7 +86,6 @@ class EPsList extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <ScrollView>
         {this.renderEps()}

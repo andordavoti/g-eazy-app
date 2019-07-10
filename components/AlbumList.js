@@ -44,13 +44,15 @@ class AlbumList extends Component {
     ]
   };
 
-  renderAlbums() {
+
+
+renderAlbums() {
     return this.state.record.map(record =>
       <CollectionDetail key={record.title} record={record} />
-      );
+    );
   }
 
-  render() {
+render() {
     console.log(this.state);
     return (
       <ScrollView>

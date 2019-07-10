@@ -5,43 +5,33 @@ import CardSection from './CardSection';
 import Button from './Button';
 
 const CollectionDetail = ({ record }) => {
-    const { title, artist, artist_image, image, url, release_date } = record;
-    const {
-        artistImageStyle,
-        headerContentStyle,
-        thumbnailContainerStyle,
-        recordTitleStyle,
-        imageStyle,
-        artistNameStyle
-    } = styles;
-
     return (
         <Card>
             <CardSection>
-                <View style={thumbnailContainerStyle}>
+                <View style={styles.thumbnailContainerStyle}>
                     <TouchableOpacity
                         onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>
                         <Image
-                            source={artist_image}
-                            style={artistImageStyle}
+                            source={record.artist_image}
+                            style={styles.artistImageStyle}
                         />
                     </TouchableOpacity>
                 </View>
 
-                <View style={headerContentStyle}>
-                    <Text style={recordTitleStyle}> {title} - ({release_date})</Text>
+                <View style={styles.headerContentStyle}>
+                    <Text style={styles.recordTitleStyle}> {record.title} - ({record.release_date})</Text>
                     <TouchableOpacity>
                         <Text
-                        style={artistNameStyle}
-                        onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>{artist}</Text>
+                        style={styles.artistNameStyle}
+                        onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}>{record.artist}</Text>
                     </TouchableOpacity>
                 </View>
             </CardSection>
 
             <CardSection>
                 <Image
-                    source={image}
-                    style={imageStyle}
+                    source={record.image}
+                    style={styles.imageStyle}
                     onPress={() => Linking.openURL('spotify:artist:02kJSzxNuaWGqwubyUba0Z')}
                 />
             </CardSection>
@@ -49,7 +39,7 @@ const CollectionDetail = ({ record }) => {
             <CardSection>
                 <Button
                     buttonText='Listen Now'
-                    onPress={() => Linking.openURL(url)}
+                    onPress={() => Linking.openURL(record.url)}
                 />
             </CardSection>
         </Card>

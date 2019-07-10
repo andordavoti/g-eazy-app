@@ -28,7 +28,7 @@ class MixtapeList extends Component {
                 artist: 'G-Eazy',
                 release_date: '2010',
                 url: 'https://genius.com/albums/G-eazy/Big',
-                service: 'genius',
+                service: 'youtube',
                 image: require('../assets/images/big.jpg'),
                 artist_image: require('../assets/images/g-eazy.jpg')
             },
