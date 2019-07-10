@@ -7,7 +7,7 @@ import TabBarMaterialCommunityIcon from '../components/TabBarMaterialCommunityIc
 import AlbumsScreen from '../screens/AlbumsScreen';
 import EPsScreen from '../screens/EPsScreen';
 import MixtapesScreen from '../screens/MixtapesScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import AboutScreen from '../screens/AboutScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -67,21 +67,21 @@ MixtapesStack.path = '';
 
 
 
-const SettingsStack = createStackNavigator(
+const AboutStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    About: AboutScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+AboutStack.navigationOptions = {
+  tabBarLabel: 'About',
   tabBarOptions: { activeTintColor: 'black' },
   tabBarIcon: ({ focused }) => (
-    <TabBarMaterialIcons focused={focused} name='settings' />),
+    <TabBarMaterialCommunityIcon focused={focused} name='information-outline' />),
 };
 
-SettingsStack.path = '';
+AboutStack.path = '';
 
 
 
@@ -89,7 +89,7 @@ const tabNavigator = createBottomTabNavigator({
   AlbumStack,
   EPsStack,
   MixtapesStack,
-  SettingsStack,
+  AboutStack,
 });
 
 tabNavigator.path = '';
