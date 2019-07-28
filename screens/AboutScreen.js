@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
-import Header from '../components/Header';
+import { Text, View, Image, TouchableOpacity, Linking } from 'react-native';
 
 class AboutScreen extends Component {
 
     render() {
         return (
             <React.Fragment>
-                <Header headerText={'About'} />
 
                 <View style={Styles.ContainerStyle}>
 
@@ -40,7 +38,14 @@ class AboutScreen extends Component {
                             www.andordavoti.com</Text>
                     </TouchableOpacity>
 
-                    <Text style={Styles.VersionStyle}>Version: 1.0.1</Text>
+                    <TouchableOpacity
+                        onPress={() => Linking.openURL('https://paypal.me/andordavoti')}>
+                        <Text
+                            style={Styles.DonateStyle}>
+                            Donate Via PayPal</Text>
+                    </TouchableOpacity>
+
+                    <Text style={Styles.VersionStyle}>Version: 1.1.1</Text>
                 </View>
             </React.Fragment>
         );
@@ -74,9 +79,15 @@ const Styles = {
     },
     LinkStyle: {
         color: 'blue',
-        padding: 30,
+        padding: 15,
         textAlign: 'center',
         fontSize: 15
+    },
+    DonateStyle: {
+        color: 'blue',
+        paddingBottom: 20,
+        textAlign: 'center',
+        fontSize: 20
     },
     VersionStyle: {
         paddingBottom: 15,
@@ -86,7 +97,6 @@ const Styles = {
 }
 
 AboutScreen.navigationOptions = {
-    header: null,
     title: 'About',
     headerTitleStyle: { flex: 1, textAlign: 'center' },
 };

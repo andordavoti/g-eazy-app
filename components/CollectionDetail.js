@@ -38,7 +38,7 @@ const CollectionDetail = ({ record }) => {
 
             <CardSection>
                 <Button
-                    buttonText='Listen Now'
+                    buttonText={'Listen on ' + (record.service)} 
                     onPress={() => Linking.openURL(record.url)}
                 />
             </CardSection>
