@@ -1,53 +1,46 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
+import Constants from 'expo-constants';
 
 class AboutScreen extends Component {
 
     render() {
         return (
-            <React.Fragment>
+                <ScrollView contentContainerStyle={{flexGrow: 1}}>
+                    <View style={Styles.ContainerStyle}>
 
-                <View style={Styles.ContainerStyle}>
+                        <Text style={Styles.HeaderStyle}>Artist:</Text>
 
-                    <Text style={Styles.HeaderStyle}>Artist:</Text>
+                        <Image
+                            source={require('../assets/images/g-eazy-about.png')}
+                            style={Styles.imageStyle}
+                        />
 
-                    <Image
-                        source={require('../assets/images/g-eazy-about.png')}
-                        style={Styles.imageStyle}
-                    />
+                        <Text style={Styles.NameStyle}>G-Eazy</Text>
 
-                    <Text style={Styles.NameStyle}>G-Eazy</Text>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://g-eazy.com')}>
+                            <Text style={Styles.LinkStyle}>www.g-eazy.com</Text>
+                        </TouchableOpacity>
+                        <Text style={Styles.HeaderStyle}>Developer:</Text>
 
-                    <TouchableOpacity
-                        onPress={() => Linking.openURL('https://g-eazy.com')}>
-                        <Text style={Styles.LinkStyle}>www.g-eazy.com</Text>
-                    </TouchableOpacity>
-                    <Text style={Styles.HeaderStyle}>Developer:</Text>
+                        <Image
+                            source={require('../assets/images/andor-davoti.png')}
+                            style={Styles.imageStyle}
+                        />
 
-                    <Image
-                        source={require('../assets/images/andor-davoti.png')}
-                        style={Styles.imageStyle}
-                    />
+                        <Text style={Styles.NameStyle}>Andor Davoti</Text>
 
-                    <Text style={Styles.NameStyle}>Andor Davoti</Text>
+                        <TouchableOpacity
+                            onPress={() => Linking.openURL('https://andordavoti.com')}>
+                            <Text
+                                style={Styles.LinkStyle}>
+                                www.andordavoti.com</Text>
+                        </TouchableOpacity>
 
-                    <TouchableOpacity
-                        onPress={() => Linking.openURL('https://andordavoti.com')}>
-                        <Text
-                            style={Styles.LinkStyle}>
-                            www.andordavoti.com</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => Linking.openURL('https://paypal.me/andordavoti')}>
-                        <Text
-                            style={Styles.DonateStyle}>
-                            Donate Via PayPal</Text>
-                    </TouchableOpacity>
-
-                    <Text style={Styles.VersionStyle}>Version: 1.1.1</Text>
-                </View>
-            </React.Fragment>
+                        <Text style={Styles.VersionStyle}>Version: {Constants.manifest.version}</Text>
+                    </View>
+                </ScrollView>
         );
     }
 }
