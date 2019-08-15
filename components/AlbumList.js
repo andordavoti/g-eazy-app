@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
-import CollectionDetail from './CollectionDetail';
+import RecordDetail from './RecordDetail';
 
 class AlbumList extends Component {
   state = {
@@ -66,7 +66,7 @@ class AlbumList extends Component {
 
 renderAlbums() {
     return this.state.record.map(record =>
-      <CollectionDetail key={record.title} record={record} />
+      <RecordDetail key={record.title} record={record} />
     );
   }
 

@@ -7,6 +7,7 @@ import TabBarMaterialCommunityIcon from '../components/TabBarMaterialCommunityIc
 import AlbumsScreen from '../screens/AlbumsScreen';
 import EPsScreen from '../screens/EPsScreen';
 import MixtapesScreen from '../screens/MixtapesScreen';
+import TourScreen from '../screens/TourScreen';
 import AboutScreen from '../screens/AboutScreen';
 
 const config = Platform.select({
@@ -47,8 +48,6 @@ EPsStack.navigationOptions = {
 EPsStack.path = '';
 
 
-
-
 const MixtapesStack = createStackNavigator(
   {
     Mixtapes: MixtapesScreen,
@@ -64,6 +63,23 @@ MixtapesStack.navigationOptions = {
 };
 
 MixtapesStack.path = '';
+
+
+const TourStack = createStackNavigator(
+  {
+    Tour: TourScreen,
+  },
+  config
+);
+
+TourStack.navigationOptions = {
+  tabBarLabel: 'Tour',
+  tabBarOptions: { activeTintColor: 'black' },
+  tabBarIcon: ({ focused }) => (
+    <TabBarMaterialCommunityIcon focused={focused} name='microphone-variant' />),
+};
+
+TourStack.path = '';
 
 
 
@@ -89,6 +105,7 @@ const tabNavigator = createBottomTabNavigator({
   AlbumStack,
   EPsStack,
   MixtapesStack,
+  TourStack,
   AboutStack,
 });
 

@@ -4,7 +4,7 @@ import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
-const CollectionDetail = ({ record }) => {
+const RecordDetail = ({ record }) => {
     return (
         <Card>
             <CardSection>
@@ -79,4 +79,4 @@ const styles = {
     }
 };
 
-export default CollectionDetail;
+export default RecordDetail;

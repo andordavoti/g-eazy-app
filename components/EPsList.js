@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
-import CollectionDetail from './CollectionDetail';
+import RecordDetail from './RecordDetail';
 
 class EPsList extends Component {
   state = {
@@ -64,7 +64,7 @@ class EPsList extends Component {
 
   renderEps() {
     return this.state.record.map(record =>
-      <CollectionDetail key={record.title} record={record} />);
+      <RecordDetail key={record.title} record={record} />);
   }
 
   render() {
