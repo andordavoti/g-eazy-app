@@ -9,7 +9,7 @@
       "android",
       "web"
     ],
-    "version": "1.2.4",
+    "version": "1.2.5",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
@@ -28,7 +28,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 6,
+      "versionCode": 7,
       "package": "com.andordavoti.geazyalbums"
     }
   }
