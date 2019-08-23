@@ -9,7 +9,7 @@
       "android",
       "web"
     ],
-    "version": "1.2.5",
+    "version": "1.2.8",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
@@ -25,10 +25,11 @@
     ],
     "ios": {
       "bundleIdentifier": "com.andordavoti.geazy",
-      "supportsTablet": true
+      "buildNumber": "3",
+      "supportsTablet": false
     },
     "android": {
-      "versionCode": 7,
+      "versionCode": 9,
       "package": "com.andordavoti.geazyalbums"
     }
   }

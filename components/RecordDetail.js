@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image, Linking, TouchableOpacity } from 'react-native';
+import { Text, View, Image, Linking, TouchableOpacity, Dimensions } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -72,7 +72,7 @@ const styles = {
         marginRight: 1
     },
     imageStyle: {
-        height: 400,
+        height: Dimensions.get('window').width,
         flexGrow: 1,
         width: null,
         borderRadius: 5
