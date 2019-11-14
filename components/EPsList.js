@@ -6,10 +6,19 @@ class EPsList extends Component {
   state = {
     record: [
       {
+        title: 'Scary Nights',
+        artist: 'G-Eazy',
+        release_date: '2019',
+        url: 'spotify:album:77Q0xwlCfFLhUNO1Sh8ORM',
+        service: 'Spotify',
+        image: require('../assets/images/scary-nights.jpg'),
+        artist_image: require('../assets/images/g-eazy.jpg')
+      },
+      {
         title: 'B-Sides',
         artist: 'G-Eazy',
         release_date: '2019',
-        url: 'spotify:album:405miG4F2WOdyNmP4ChaJk',
+        url: 'spotify:album:2C6M7W3XuPMko8hacm8Ibo',
         service: 'Spotify',
         image: require('../assets/images/b-sides.jpg'),
         artist_image: require('../assets/images/g-eazy.jpg')

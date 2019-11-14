@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, RefreshControl } from 'react-native';
+import { ScrollView, RefreshControl, Text } from 'react-native';
 import TourDetail from './TourDetail';
 import axios from 'axios';
 
@@ -30,9 +30,14 @@ class TourList extends Component {
   }
 
   renderTour() {
-    return this.state.tourInfo.map(tourInfo =>
-      <TourDetail key={tourInfo.id} tourInfo={tourInfo} />
-    );
+    if(this.state.tourInfo.length !== 0){
+      return this.state.tourInfo.map(tourInfo =>
+        <TourDetail key={tourInfo.id} tourInfo={tourInfo} />
+      );
+     }
+     else{
+      return <Text style={Styles.textStyle}>No tour dates availible at this time</Text>
+     }
   }
 
   render() {
@@ -47,9 +52,19 @@ class TourList extends Component {
       >
       {this.renderTour()}
       </ScrollView>
-
     );
   }
+}
+
+const Styles = {
+  textStyle: {
+    textAlign: 'center',
+    color: '#000000',
+    fontSize: 16,
+    fontWeight: 'bold',
+    paddingTop: 50,
+    paddingBottom: 10
+}
 }
 
 export default TourList;
