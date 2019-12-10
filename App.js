@@ -31,6 +31,7 @@ export default function App(props) {
 async function loadResourcesAsync() {
   await Promise.all([
     Asset.loadAsync([
+      require('./assets/images/scary-nights.jpg'),
       require('./assets/images/the-beautiful-and-damned.jpg'),
       require('./assets/images/when-its-dark-out.jpg'),
       require('./assets/images/these-things-happen.jpg'),

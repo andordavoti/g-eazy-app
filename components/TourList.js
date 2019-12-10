@@ -20,7 +20,7 @@ class TourList extends Component {
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -36,7 +36,7 @@ class TourList extends Component {
       );
      }
      else{
-      return <Text style={Styles.textStyle}>No tour dates availible at this time</Text>
+      return <Text style={Styles.textStyle}>No tour dates available at this time</Text>
      }
   }
 
