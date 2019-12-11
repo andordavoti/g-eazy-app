@@ -1,43 +1,58 @@
 import React, { Component } from 'react';
-import { ScrollView, RefreshControl, Text } from 'react-native';
+import { ScrollView, RefreshControl, Text, View, TouchableOpacity } from 'react-native';
 import TourDetail from './TourDetail';
 import axios from 'axios';
+import * as WebBrowser from 'expo-web-browser';
 
 class TourList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       refreshing: false,
       tourInfo: [],
+      tourInfoError: []
     }
-  }
 
   _onRefresh = () => {
     this.setState({ refreshing: true });
     this.fetchData()
-    .then(() => {
-      this.setState({ refreshing: false });
-    });
+      .then(() => {
+        this.setState({ refreshing: false });
+      });
   }
 
   componentDidMount() {
     this.fetchData();
   }
 
-   async fetchData() {
+  openLink = async (link) => {
+    await WebBrowser.openBrowserAsync(link);
+  };
+
+  async fetchData() {
     axios.get('https://rest.bandsintown.com/artists/G-Eazy/events?app_id=43637f70f84aa4574a5ce121e62b4e55&date=upcoming')
-      .then(response => this.setState({ tourInfo: response.data }));
+      .then(response => this.setState({ tourInfo: response.data }))
+      .catch(error => this.setState({ tourInfoError: error.response }))
   }
 
   renderTour() {
-    if(this.state.tourInfo.length !== 0){
+    if (this.state.tourInfo.length !== 0) {
       return this.state.tourInfo.map(tourInfo =>
         <TourDetail key={tourInfo.id} tourInfo={tourInfo} />
       );
-     }
-     else{
-      return <Text style={Styles.textStyle}>No tour dates available at this time</Text>
-     }
+    }
+    else if (this.state.tourInfoError.status === 403) {
+      return (
+        <View>
+          <Text style={Styles.boldTextStyle}>This feature is currently not supported.</Text>
+          <Text style={Styles.textStyle}>Tour dates are available here:</Text>
+          <TouchableOpacity onPress={() => this.openLink('https://g-eazy.com/pages/tour')}>
+            <Text style={Styles.linkStyle}>https://g-eazy.com/pages/tour</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    }
+    else {
+      return <Text style={Styles.boldTextStyle}>No tour dates available at this time</Text>
+    }
   }
 
   render() {
@@ -50,21 +65,33 @@ class TourList extends Component {
           />
         }
       >
-      {this.renderTour()}
+        {this.renderTour()}
       </ScrollView>
     );
   }
 }
 
 const Styles = {
-  textStyle: {
+  boldTextStyle: {
     textAlign: 'center',
     color: '#000000',
     fontSize: 16,
     fontWeight: 'bold',
     paddingTop: 50,
+  },
+  textStyle: {
+    textAlign: 'center',
+    color: '#000000',
+    fontSize: 16,
+    paddingTop: 35,
+  },
+  linkStyle: {
+    color: 'blue',
+    textAlign: 'center',
+    fontSize: 16,
+    paddingTop: 35,
     paddingBottom: 10
-}
+  },
 }
 
 export default TourList;
