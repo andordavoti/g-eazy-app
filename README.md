@@ -4,7 +4,7 @@ Open-source app built with expo and react native to view the discography of the 
 
 **Screenshots:**
 
-<img src="screenshots/IMG_6100.jpg" width="100" ><img src="screenshots/IMG_6101.jpg" width="100" ><img src="screenshots/IMG_6102.jpg" width="100" ><img src="screenshots/IMG_6103.jpg" width="100" ><img src="screenshots/IMG_6104.jpg" width="100" >
+<img src="screenshots/IMG_6100.jpg" width="150" ><img src="screenshots/IMG_6101.jpg" width="150" ><img src="screenshots/IMG_6102.jpg" width="150" ><img src="screenshots/IMG_6103.jpg" width="150" ><img src="screenshots/IMG_6104.jpg" width="150" >
 
 **Downloads:**
 
