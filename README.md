@@ -1,5 +1,7 @@
 # G-Eazy Discography and Tour Dates App
 
+<img src="assets/images/icon.png" width="250" >
+
 Open-source app built with expo and react native to view the discography of the artist G-Eazy and fetch live tour dates with the Bandsintown API.
 
 **Screenshots:**
