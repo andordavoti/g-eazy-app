@@ -21,7 +21,7 @@
       "supportsTablet": false
     },
     "android": {
-      "versionCode": 12,
+      "versionCode": 20,
       "package": "com.andordavoti.geazyalbums"
     }
   }
