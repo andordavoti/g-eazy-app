@@ -1,8 +1,9 @@
 import React from "react";
-import { Text, View, Linking } from "react-native";
+import { Text, View } from "react-native";
 import Card from "./Card";
 import CardSection from "./CardSection";
 import Button from "./Button";
+import * as Linking from "expo-linking";
 
 const TourDetail = ({ tourInfo }) => {
   return (
